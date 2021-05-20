@@ -1,0 +1,19 @@
+[
+  {
+    "id": 0,
+    "carImage": "../Assets/cardImages/imageCar.png",
+    "iconLove": "../Assets/cardImages/iconLove.png",
+    "logoCar": "../Assets/cardImages/logoCar.png",
+    "carName": "Audi A4",
+    "price": "271.000",
+    "km": "75.000",
+    "location": "Maltepe",
+    "transmission": "Otomatik",
+    "iconDetail1": "../Assets/cardImages/iconDetail1.png",
+    "iconDetail2": "../Assets/cardImages/iconDetail2.png",
+    "iconDetail3": "../Assets/cardImages/iconDetail3.png",
+    "iconDetail4": "../Assets/cardImages/iconDetail4.png",
+    "height": 200,
+    "width": 163
+  }
+]
