@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-const CardList = props => {
+const LightCardList = props => {
   const {
     height,
     width,
@@ -33,30 +33,33 @@ const CardList = props => {
 
   const LinearCard = () => {
     return (
-      <LinearGradient
-        colors={['#1999CD', '#0C578B']}
-        style={{width: 160, height: 137, margin: 10, borderRadius: 10}}>
-        <Text
+      <ImageBackground
+        source={require('../Assets/lightCardImages/image1.png')}
+        style={{
+          width: 171,
+          height: 137,
+          marginVertical: 10,
+          borderRadius: 20,}}>
+        <LinearGradient
+          colors={['rgba(245, 149, 60, 0.5)', 'rgba(237, 93, 47, 0.4)']}
           style={{
-            color: 'white',
-            fontWeight: '800',
-            margin: 10,
-            fontSize: 18,
+            flex: 1,
+            position: 'relative',
+            justifyContent: 'flex-end',
           }}>
-          Krediye Uygun{'\n'}Araçlar
-        </Text>
-        <Image
-          source={require('../Assets/cardImages/gold.png')}
-          style={{
-            width: 108,
-            height: 77,
-            alignSelf: 'flex-end',
-            top: 45,
-            right: 10,
-            position: 'absolute',
-          }}
-        />
-      </LinearGradient>
+          <Text
+            style={{
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: 17,
+              marginLeft: 10,
+              marginBottom: 10,
+            }}>
+            Krediye Uygun{'\n'}
+            <Text style={{fontWeight: 'normal'}}>Araçlar</Text>
+          </Text>
+        </LinearGradient>
+      </ImageBackground>
     );
   };
 
@@ -64,18 +67,17 @@ const CardList = props => {
     return (
       <TouchableOpacity
         style={{
-          height,
-          width,
-          backgroundColor: '#1E2832',
+          height: 218,
+          width: 171,
+          backgroundColor: '#ffff',
           borderRadius: 10,
-          margin: 10,
+          marginVertical: 10,
         }}>
         <View style={styles.imageContainer}>
           <ImageBackground
             source={require('../Assets/cardImages/imageCar.png')}
             style={{
-              height: 110,
-              width: 163,
+              flex: 1,
               borderRadius: 10,
             }}>
             <TouchableOpacity
@@ -115,8 +117,8 @@ const CardList = props => {
         </View>
         <View style={styles.detailContainer}>
           <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-            <Text style={{color: 'rgba(255, 255, 255, 0.83)'}}>Audi A4</Text>
-            <Text style={{color: '#1999CD'}}>
+            <Text style={{color: '#3A2D13'}}>Audi A4</Text>
+            <Text style={{color: '#ED5D2F'}}>
               271.000 <Text style={{color: 'rgba(134, 148, 166, 1)'}}>₺</Text>
             </Text>
           </View>
@@ -180,9 +182,8 @@ const CardList = props => {
     <View
       style={{
         flexDirection: 'row',
-        justifyContent: 'center',
-        marginHorizontal: 10,
-        alignItems: 'center',
+        justifyContent: 'space-around',
+        flex: 1,
       }}>
       <View>
         <CarCard />
@@ -196,11 +197,10 @@ const CardList = props => {
   );
 };
 
-export default CardList;
+export default LightCardList;
 
 const styles = StyleSheet.create({
   imageContainer: {
-    backgroundColor: 'orange',
     flex: 0.55,
     borderTopLeftRadius: 7,
     borderTopRightRadius: 7,

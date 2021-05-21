@@ -7,19 +7,33 @@ import {
   widthPercentageToDP as wp,
 } from 'react-native-responsive-screen';
 
-const SearchBar = () => {
+const SearchBar = props => {
+  const {searchBackground, searchIconTintColor, searchFilterBackground} = props;
+
   return (
     <View
       style={{
         height: hp('5%'),
         flexDirection: 'row',
         marginTop: Platform.OS === 'ios' ? 0 : 10,
+        marginBottom: 10,
       }}>
       <View style={{flex: 0.8}}>
-        <View style={styles.searchInput}>
+        <View
+          style={[
+            styles.searchInput,
+            {
+              backgroundColor: searchBackground,
+            },
+          ]}>
           <Image
             source={require('../Assets/icons/iconSearch.png')}
-            style={{height: 19, width: 19, marginLeft: 13}}
+            style={{
+              height: 19,
+              width: 19,
+              marginLeft: 13,
+              tintColor: searchIconTintColor,
+            }}
           />
           <TextInput
             placeholder="Arama"
@@ -37,7 +51,7 @@ const SearchBar = () => {
         <View
           style={{
             flex: 1,
-            backgroundColor: '#1E2832',
+            backgroundColor: searchFilterBackground,
             justifyContent: 'center',
             alignItems: 'center',
             borderRadius: 7,
@@ -57,7 +71,6 @@ export default SearchBar;
 
 const styles = StyleSheet.create({
   searchInput: {
-    backgroundColor: '#1E2832',
     flex: 1,
     marginHorizontal: 10,
     flexDirection: 'row',

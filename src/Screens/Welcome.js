@@ -6,6 +6,7 @@ import {
   ImageBackground,
   Platform,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   View,
@@ -31,9 +32,13 @@ const Welcome = () => {
   return (
     <SafeAreaView style={{backgroundColor: '#0E151F', flex: 1}}>
       {/* 5% */}
-      <SearchBar />
-      <View style={styles.contentContainer}>
-        <WelcomeCarBar />
+      <SearchBar
+        searchBackground={'#1E2832'}
+        searchIconTintColor={'#8694A6'}
+        searchFilterBackground={'#1E2832'}
+      />
+      <ScrollView style={styles.contentContainer}>
+        <WelcomeCarBar icon1Color={'#1999CD'} carIconColor={'#fff'} />
         <View
           style={{
             height: hp('27%'),
@@ -74,7 +79,7 @@ const Welcome = () => {
             keyExtractor={item => item.id}
           />
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
